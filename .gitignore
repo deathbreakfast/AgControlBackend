@@ -1,1 +1,10 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# python
 env
+data/__pycache__/
+data/schema/__pycache__/
+.mypy_cache/
+
+# sqllite
+data/database/database.sqlite3
