@@ -2,9 +2,12 @@
 
 # python
 env
-data/__pycache__/
-data/schema/__pycache__/
+**/__pycache__
 .mypy_cache/
 
-# sqllite
+# sql
 data/database/database.sqlite3
+
+# misc 
+.DS_Store
+.gitignore.swp
