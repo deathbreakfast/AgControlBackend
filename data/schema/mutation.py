@@ -34,7 +34,7 @@ class EditEntity(graphene.Mutation):
         data = input_to_dictionary(input)
         entity = EntityModel.query.get(data['id'])
 
-        if 'entity_type' in data:
+        if 'entity_type' in data and data['entity_type']:
             if entity.type == EntityType.sprinkler and data['entity_type'] != 'sprinkler':
                 db_session.delete(SprinklerModel.query.get(entity.sprinkler[0].id))
             elif entity.type == EntityType.zone or EntityType.unknown and \
@@ -45,13 +45,13 @@ class EditEntity(graphene.Mutation):
             entity.type = data['entity_type'] 
                 
 
-        if 'name' in data:
+        if 'name' in data and data['name']:
             entity.name = data['name']
 
-        if 'show_on_dashboard' in data:
+        if 'show_on_dashboard' in data and data['show_on_dashboard']:
             entity.show_on_dashboard = data['show_on_dashboard']
 
-        if 'parent_id' in data:
+        if 'parent_id' in data and data['parent_id']:
             entity.parent_id = data['parent_id']
 
         db_session.add(entity)
