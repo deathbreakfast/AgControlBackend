@@ -15,10 +15,9 @@ TODO
 TODO
 
 ## Tech/framework used
-Ex. -
 
-<b>Built with</b>
-- [Electron](https://electron.atom.io)
+We use Flask and Flask-GraphQL for the web backend.
+graphene for GraphQL and SQLAlchemy for our ORM layer.
 
 ## Features
 
